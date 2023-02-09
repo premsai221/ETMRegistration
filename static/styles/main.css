@@ -1,0 +1,99 @@
+form {
+    flex-grow: 1;
+}
+
+.container-slots {
+    padding: 4rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+h2, p {
+    display: inline;
+}
+
+.dropdown-btn {
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    background-color: var(--secondary-clr-100);
+    border-radius: 1rem;
+}
+
+.day-one, .day-two {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.hide {
+    display: none;
+  }
+
+.input-radio-container{
+    background-color: white;
+    max-width: 10rem;
+    max-height: 12rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.input-radio-container:has(input[type=radio]:checked)
+{
+    background-color: rgb(91, 91, 91);
+    color: white;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+label {
+    padding: 1rem;
+}
+
+.label-timing {
+    font-size: large;
+}
+
+.label-slot-info {
+    font-size: medium;
+}
+
+
+@media (max-width: 1000px) 
+{
+    .day-one, .day-two {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 800px) 
+{
+    .day-one, .day-two {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) 
+{
+    .day-one, .day-two {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* @media (max-width: 450px) 
+{
+    .day-one, .day-two {
+        grid-template-columns: 1fr;
+    }
+
+    .container-slots {
+        padding: 6rem;
+    }
+} */
