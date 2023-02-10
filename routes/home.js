@@ -17,5 +17,10 @@ router.get('/',async function (req, res) {
     res.sendFile(path.join(__dirname, "..", "views", "main.html"));
 });
 
+router.get('/getslots',async function (req, res) {
+    var slotData = await Slot.find();
+    var slotObj = {slots:{...slotData}};
+    return res.json(JSON.stringify(slotObj))
+})
 
 module.exports = router;
