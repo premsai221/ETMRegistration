@@ -2,8 +2,17 @@ form {
     flex-grow: 1;
 }
 
+.alert-container {
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    position: absolute;
+    z-index: 1;
+}
+
 .container-slots {
     padding: 4rem;
+    padding-bottom: 6rem;
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -16,12 +25,35 @@ h2, p {
     display: inline;
 }
 
+
+.register-button {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    width:7rem;
+    height: 2rem;
+    border:none;
+    background-color: var(--secondary-clr-100);
+    border-radius: 0.8rem;
+    background-color: var(--primary-clr-600);
+    color: var(--secondary-clr-100);
+    box-shadow: 2px 2px 8px grey;
+}
+
+.register-button:hover {
+    box-shadow: none;
+}
+
 .dropdown-btn {
-    width: 10rem;
+    width: 12rem;
     height: 3rem;
     border: none;
     background-color: var(--secondary-clr-100);
     border-radius: 1rem;
+}
+
+.dropdown-btn:hover {
+    box-shadow: 2px 2px 8px grey;
 }
 
 .day-one, .day-two {
@@ -33,7 +65,7 @@ h2, p {
 }
 .hide {
     display: none;
-  }
+}
 
 .input-radio-container{
     background-color: white;
@@ -59,11 +91,17 @@ label {
 
 .label-timing {
     font-size: large;
+    font-weight: 600;
 }
 
 .label-slot-info {
     font-size: medium;
 }
+
+/* .container-footer::before {
+    content: '';
+    height: 2.5rem;
+} */
 
 
 @media (max-width: 1000px) 
@@ -84,6 +122,10 @@ label {
 {
     .day-one, .day-two {
         grid-template-columns: 1fr 1fr;
+        gap:2rem;
+    }
+    .container-slots {
+        padding: 2.5rem;
     }
 }
 

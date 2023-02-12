@@ -8,13 +8,17 @@
     <title>EscapeTheMatrix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Varela+Round&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/styles/root.css">
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 
 <body>
+    <div class="alert-box">
+        
+    </div>
     <div class="container">
         <nav class="container-nav">
             <img class="vit-logo" src="/images/vit_logo.png" alt="">
@@ -22,16 +26,27 @@
             <img class="matrix-logo" src="/images/matrix_logo.png" alt="">
         </nav>
         <form onsubmit="">
-        <div class="container-slots">
-                <button type="button" class="dropdown-btn" id="view-day-one" onclick="unHide('day-one')">View Day One</button>
+            <button type="button" class="register-button" onclick="registerBtnClicked()">Register</button>
+            <div class="container-slots">
+                <button type="button" class="dropdown-btn" id="view-day-one" onclick="unHide('day-one')">23/02/2023
+                    &#9660;</button>
                 <div class="day-one hide">
                 </div>
-                <button type="button" class="dropdown-btn" id="view-day-two" onclick="unHide('day-two')">View Day Two</button>
+                <button type="button" class="dropdown-btn" id="view-day-two" onclick="unHide('day-two')">24/02/2023
+                    &#9660;</button>
                 <div class="day-two hide">
                 </div>
             </div>
         </form>
-        <footer class="container-footer"></footer>
+        <footer class="container-footer">
+            <div class="small-font">PRESENTED BY</div>
+            <div class="large-font">MATRIX</div>
+            <div class="footer-logo-group">
+                <a href=""><img src="/images/insta_logo.png" alt="" class="footer-logo"></a>
+                <a href=""><img src="/images/linkedin_logo.png" alt="" class="footer-logo"></a>
+                <a href=""><img src="/images/email_logo.png" alt="" class="footer-logo"></a>
+            </div>
+        </footer>
         <script src="/scripts/main.js"></script>
     </div>
 </body>
