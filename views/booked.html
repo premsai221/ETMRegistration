@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,13 @@
     <title>EscapeTheMatrix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Varela+Round&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="/styles/root.css">
+    <link rel="stylesheet" href="/styles/root.css">
+    <link rel="stylesheet" href="/styles/booked.css">
 </head>
+
 <body>
     <div class="container">
         <nav class="container-nav">
@@ -18,11 +22,23 @@
             <img class="riviera-logo" src="/images/riviera_logo_cropped.png" alt="">
             <img class="matrix-logo" src="/images/matrix_logo.png" alt="">
         </nav>
-        <div>
-            <h1>Slot: </h1>
+        <div class="slot-info-container">
+            <h2>Slot already booked: <br> {the booked slot will be inserted}</h2>
         </div>
-        <footer class="container-footer"></footer>
+        <footer class="container-footer">
+            <div class="small-font">PRESENTED BY</div>
+            <div class="large-font">MATRIX</div>
+            <div class="footer-logo-group">
+                <a href="https://www.instagram.com/matrix.vit/" target="_blank"><img src="/images/insta_logo.png" alt=""
+                        class="footer-logo"></a>
+                <a href="https://www.linkedin.com/company/matrixvit/" target="_blank"><img
+                        src="/images/linkedin_logo.png" alt="" class="footer-logo"></a>
+                <a href="mailto:multimedia@vit.ac.in" target="_blank"><img src="/images/email_logo.png" alt=""
+                        class="footer-logo"></a>
+            </div>
+        </footer>
         <script src="/scripts/booked.js"></script>
     </div>
 </body>
+
 </html>

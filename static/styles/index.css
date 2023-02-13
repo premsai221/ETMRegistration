@@ -9,6 +9,10 @@
     align-self: center;
 }
 
+.squid-guy-gif {
+    margin-top: 2rem;
+}
+
 .container-login {
     justify-self: center;
     align-self: center;
@@ -34,6 +38,28 @@ form {
     text-align: center;
 }
 
+.static-text {
+    font-size: 0.8em;
+}
+
+.typed-text {
+    color: green;
+    min-height: 36px;
+    font-size: 1.3em;
+    animation: type 300ms;
+    animation-timing-function:ease-in;
+    animation-iteration-count: 15;
+    border-right: 2px solid black;
+}
+
+@keyframes type {
+    from {
+        border-right: 2px solid green;
+      }
+      to {
+        border-right: 2px solid black;
+      }
+}
 
 #email, #otp {
     min-width: 300px;

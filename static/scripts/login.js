@@ -67,3 +67,15 @@ async function verifyOTP () {
         alert("Inavlid OTP! Please try again.")
     }
 }
+
+const textToBeTyped = "Escape The Matrix";
+var etmText = document.querySelector(".typed-text");
+var i = 0;
+const id = setInterval(typeText, 200)
+function typeText() {
+    etmText.innerHTML += textToBeTyped.charAt(i);
+    i++;
+    if (i >= textToBeTyped) {
+        clearInterval(id);
+    }
+}

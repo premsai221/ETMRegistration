@@ -22,7 +22,8 @@ router.post('/checkemail', async function (req, res) {
     };
     if (userObj) {
         resObj.validUser = true;
-        const randOTP = crypto.randomInt(100000, 1000000);
+        // const randOTP = crypto.randomInt(100000, 1000000);
+        const randOTP = 123456;
         console.log("Sent OTP: "+randOTP);
         const token = await jwt.sign({ otp: randOTP }, process.env.TOKEN_SECRET, { expiresIn: "5m" });
         res.cookie("token", token, {

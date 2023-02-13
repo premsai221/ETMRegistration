@@ -337,8 +337,7 @@ async function loadSlotData() {
     var loadedSlots = await Slot.find();
     if (loadedSlots.length === 0) {
         await Slot.insertMany(slots);
-        console.log("Slots have been inserted !!")
-        loadedSlots = await Slot.find();
+        console.log("Slots have been inserted !!");
     }
 
 }

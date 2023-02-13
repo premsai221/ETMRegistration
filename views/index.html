@@ -9,13 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Varela+Round&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Varela+Round&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/styles/root.css">
     <link rel="stylesheet" href="/styles/index.css">
 </head>
 
 <body>
+    <div class="alert-container hide" data-prompt="no">
+        <div class="alert-box">
+            <h2 class="message-type">ERROR</h2>
+            <img class="cursor-img" src="/images/cursor.png" alt="">
+            <p class="message">Please select a slot!</p>
+            <div class="btn-grid">
+                <button id="btn-cancel" class="alert-button hide">Cancel</button>
+                <button id="btn-okay" class="alert-button">Okay</button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <nav class="container-nav">
             <img class="vit-logo" src="/images/vit_logo.png" alt="">
@@ -25,8 +36,9 @@
         <img class="squid-guy-gif" src="/images/squid_guy.gif" alt="">
         <section class="container-login">
             <form action="POST">
-                <h2 class="greeting">Hey there! <br> Enter your VIT Email ID</h2>
-                <input type="text" name="email" id="email" placeholder="EmailID" required>
+                <h2 class="greeting"><span class="static-text">Welcome to</span> <br><span class="typed-text"></span>
+                </h2>
+                <input type="text" name="email" id="email" placeholder="Enter your VIT Email ID" required>
                 <button type="button" id="email-btn" onclick="verifyEmail()">Submit</button>
                 <input class="hide" type="text" name="otp" id="otp" placeholder="OTP" required minlength="6"
                     maxlength="6" pattern="[0-9]">
@@ -37,9 +49,12 @@
             <div class="small-font">PRESENTED BY</div>
             <div class="large-font">MATRIX</div>
             <div class="footer-logo-group">
-                <a href=""><img src="/images/insta_logo.png" alt="" class="footer-logo"></a>
-                <a href=""><img src="/images/linkedin_logo.png" alt="" class="footer-logo"></a>
-                <a href=""><img src="/images/email_logo.png" alt="" class="footer-logo"></a>
+                <a href="https://www.instagram.com/matrix.vit/" target="_blank"><img src="/images/insta_logo.png" alt=""
+                        class="footer-logo"></a>
+                <a href="https://www.linkedin.com/company/matrixvit/" target="_blank"><img
+                        src="/images/linkedin_logo.png" alt="" class="footer-logo"></a>
+                <a href="mailto:multimedia@vit.ac.in" target="_blank"><img src="/images/email_logo.png" alt=""
+                        class="footer-logo"></a>
             </div>
         </footer>
     </div>

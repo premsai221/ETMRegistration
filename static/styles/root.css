@@ -79,12 +79,13 @@ h6 {
 
 :root {
     --primary-clr-900: black;
-    /* --primary-clr-600: #9d4edd; */
     --primary-clr-600: #8b1696;
-
+    
+    --secondary-clr-700: #CD233F;
     --secondary-clr-100: white;
 
     --ff-primary: 'IBM Plex Mono', monospace;
+    --ff-primary-alert: 'Open Sans', sans-serif;
     --ff-secondary-400: 'Varela Round', sans-serif;
 
     --fw-300: 300;
@@ -98,6 +99,86 @@ body {
   background-color: var(--primary-clr-900);
   font-family: var(--ff-primary);
   padding-bottom: 1rem;
+}
+
+.loading-page{
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  top:0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--ff-secondary-100);
+}
+
+.alert-container {
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  top:0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.alert-box {
+  min-height: 300px;
+  width: 300px;
+  max-width: 400px;
+  justify-self: center;
+  background-color: var(--primary-clr-900);
+  color: var(--secondary-clr-100);
+  font-family: var(-ff-primary-alert);
+  box-shadow: 0px 1px 10px gray;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.2em;
+}
+
+.cursor-img {
+  height: 4rem;
+}
+
+.btn-grid {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.alert-button {
+  height: 2.5rem;
+  width: 100%;
+  background-color: var(--secondary-clr-700);
+  color: var(--secondary-clr-100);
+  border-radius: 2rem;
+  flex-grow: 1;
+  border: none;
+}
+
+.alert-button:hover {
+  height: 2.5rem;
+  width: 100%;
+  color: var(--secondary-clr-700);
+  background-color: var(--secondary-clr-100);
+  border-radius: 2rem;
+  box-shadow: 0px 1px 10px var(--secondary-clr-700);
+  border: none;
 }
 
 .container {
@@ -117,17 +198,16 @@ body {
 }
 
 .vit-logo {
-  height: 1.5rem;
+  height: 2rem;
 }
 
 .riviera-logo {
   margin-right: 1.25rem;
-  height: 3rem;
+  height: 3.5rem;
 }
 
 .matrix-logo {
-  width: 2.75rem;
-  height: 2.75rem;
+  height: 3.25rem;
 }
 
 .container-footer {
