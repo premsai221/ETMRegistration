@@ -16,7 +16,6 @@ router.get('/', function (req, res) {
 router.post('/checkemail', async function (req, res) {
     const userEmail = req.body.email;
     const userObj = await User.findOne({ email: userEmail });
-    console.log(userObj);
     let resObj = {
         validUser: false
     };
@@ -25,10 +24,11 @@ router.post('/checkemail', async function (req, res) {
         // const randOTP = crypto.randomInt(100000, 1000000);
         const randOTP = 123456;
         console.log("Sent OTP: "+randOTP);
-        const token = await jwt.sign({ otp: randOTP }, process.env.TOKEN_SECRET, { expiresIn: "5m" });
+        const token = await jwt.sign({ otp: randOTP }, process.env.TOKEN_SECRET, { expiresIn: process.env.OTP_TOKEN_EXPIRE });
         res.cookie("token", token, {
             httpOnly: true,
-            secure: true
+            secure: true,
+            hidden:true
             // signed: true
         });
     }
@@ -46,18 +46,15 @@ router.post('/verifyotp', async function (req, res) {
         const userEmailObj = {
             email: req.body.email
         }
-        const token = await jwt.sign(userEmailObj, process.env.TOKEN_SECRET, { expiresIn: "30m" });
+        const token = await jwt.sign(userEmailObj, process.env.TOKEN_SECRET, { expiresIn: process.env.LOGIN_TOKEN_EXPIRE });
         res.cookie("token", token, {
             httpOnly: true,
-            secure: true
+            secure: true,
+            hidden:true
             // signed: true
         });
         resObj.validOTP = true;
-        console.log("Correct OTP");
 
-    }
-    else {
-        console.log("Wrong OTP")
     }
     return res.json(JSON.stringify(resObj))
 

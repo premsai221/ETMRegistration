@@ -44,4 +44,14 @@ router.post('/bookslot', cookieJWTAuth, async function(req, res) {
     res.json(JSON.stringify(resObj));
 })
 
+router.get('/getslotinfo', cookieJWTAuth, (req, res) => {
+    if (req.userObj.booked) {
+        const resObj = {
+            timeslot: req.userObj.timeslot,
+            day: req.userObj.day
+        };
+        res.json(JSON.stringify(resObj));
+    }
+})
+
 module.exports = router;

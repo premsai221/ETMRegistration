@@ -108,92 +108,92 @@ const slots = [
     },
     {
         day: 2,
-        timeslot: "09:00PM - 09:40PM",
+        timeslot: "09:00AM - 09:40AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "09:10PM - 09:50PM",
+        timeslot: "09:10AM - 09:50AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "09:20PM - 10:00PM",
+        timeslot: "09:20AM - 10:00AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "09:30PM - 10:10PM",
+        timeslot: "09:30AM - 10:10AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "09:40PM - 10:20PM",
+        timeslot: "09:40AM - 10:20AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "09:50PM - 10:30PM",
+        timeslot: "09:50AM - 10:30AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "10:00PM - 10:40PM",
+        timeslot: "10:00AM - 10:40AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "10:10PM - 10:50PM",
+        timeslot: "10:10AM - 10:50AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "10:20PM - 11:00PM",
+        timeslot: "10:20AM - 11:00AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "10:30PM - 11:10PM",
+        timeslot: "10:30AM - 11:10AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "10:40PM - 11:20PM",
+        timeslot: "10:40AM - 11:20AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "10:50PM - 11:30PM",
+        timeslot: "10:50AM - 11:30AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "11:00PM - 11:40PM",
+        timeslot: "11:00AM - 11:40AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "11:10PM - 11:50PM",
+        timeslot: "11:10AM - 11:50AM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "11:20PM - 12:00PM",
+        timeslot: "11:20AM - 12:00PM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "11:30PM - 12:10PM",
+        timeslot: "11:30AM - 12:10PM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "11:40PM - 12:20PM",
+        timeslot: "11:40AM - 12:20PM",
         freeSlots: 12
     },
     {
         day: 2,
-        timeslot: "11:50PM - 12:30PM",
+        timeslot: "11:50AM - 12:30PM",
         freeSlots: 12
     },
     {

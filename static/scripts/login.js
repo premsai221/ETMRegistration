@@ -26,6 +26,8 @@ function processOTP() {
 
 async function verifyEmail() {
     var emailObj = getEmailObj();
+    var emailBtnElem = document.getElementById("email-btn");
+    emailBtnElem.disabled = true;
     var response = await fetch('/checkemail', {
         method: 'POST',
         headers: {
@@ -39,6 +41,7 @@ async function verifyEmail() {
         processOTP();
     } else {
         inValidEmail();
+        emailBtnElem.disabled = false;
     }
 }
 

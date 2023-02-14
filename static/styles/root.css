@@ -104,15 +104,14 @@ body {
 .loading-page{
   height: 100%;
   width: 100%;
-  position: sticky;
+  position: absolute;
   top:0;
   z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  color: var(--ff-secondary-100);
+  background-color: var(--primary-clr-900);
+  color: var(--secondary-clr-100);
 }
 
 .alert-container {
