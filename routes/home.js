@@ -27,17 +27,16 @@ router.get('/getslots', cookieJWTAuth, async function (req, res) {
 })
 
 router.post('/bookslot', cookieJWTAuth, async function(req, res) {
-    const slotTiming = req.body.timeslot;
-    const dayInt = Number.parseInt(req.body.day);
+    const slotid = req.body.slotid;
     var resObj = {
         booked: false,
         message: "Sorry the slot is full"
     }
-    const slotObject = await Slot.findOne({timeslot: slotTiming, day:dayInt});
+    const slotObject = await Slot.findOne({slotid:slotid});
     if (slotObject.freeSlots > 0){
         slotObject.freeSlots -= 1;
         slotObject.save();
-        await User.updateOne({email:req.userObj.email}, { timeslot:slotTiming, day:dayInt, booked:true});
+        await User.updateOne({email:req.userObj.email}, { timeslot:slotObject.timeslot, day:slotObject.day, booked:true});
         resObj.booked = true;
         resObj.message = `Congrats! You have booked the slot ${slotObject.timeslot}`;
     }

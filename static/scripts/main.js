@@ -57,8 +57,7 @@ async function registerSlot() {
     const cancelBtn = alertContainer.querySelector("#btn-cancel");
     cancelBtn.classList.add("hide");
     const slotObj = {
-        timeslot: checkedElem.value,
-        day: checkedElem.getAttribute("data-day")
+        slotid: checkedElem.id
     }
     var response = await fetch('/home/bookslot', {
         method: 'POST',
@@ -103,7 +102,7 @@ function returnSlotInnerHTML(slots) {
     dayOne.innerHTML = "";
     dayTwo.innerHTML = "";
     for (keys in slots) {
-        const radioHtml = returnSlotRadio(keys, slots[keys].timeslot, slots[keys].freeSlots, slots[keys].day);
+        const radioHtml = returnSlotRadio(slots[keys].slotid, slots[keys].timeslot, slots[keys].freeSlots, slots[keys].day);
         if (slots[keys].day === 1) {
             dayOne.innerHTML += radioHtml;
         }
