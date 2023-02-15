@@ -53,4 +53,15 @@ router.get('/getslotinfo', cookieJWTAuth, (req, res) => {
     }
 })
 
+router.get('/logout', cookieJWTAuth, (req, res) => {
+    const token = '';
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        hidden:true
+        // signed: true
+    });
+    res.redirect('/');
+})
+
 module.exports = router;
