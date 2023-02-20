@@ -61,14 +61,14 @@ form {
       }
 }
 
-#email, #otp {
+#email, #pwd {
     min-width: 300px;
     height: 2.5rem;
     border-radius: 0.5rem;
     text-align: center;
 }
 
-#email:focus, #otp:focus {
+#email:focus, #pwd:focus {
     background-color: var(--primary-clr-900);
     border: 3px solid var(--secondary-clr-100);
     color: var(--secondary-clr-100);

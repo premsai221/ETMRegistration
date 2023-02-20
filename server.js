@@ -5,8 +5,6 @@ const parser = require("body-parser");
 const mainRouter = require("./routes/index");
 const homeRouter = require("./routes/home");
 const path = require('path');
-const loadSlotData = require("./dataset/loadSlots");
-const loadUserData = require("./dataset/loadUsers");
 
 const app = express();
 
@@ -14,9 +12,6 @@ mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONGO_DB_URI, {useNewUrlParser: true}, () => {
     console.log("Connected to DB");
 });
-
-loadSlotData();
-loadUserData();
 
 app.use(express.static(__dirname + "/static"));
 app.use(parser.urlencoded({ extended: true }));

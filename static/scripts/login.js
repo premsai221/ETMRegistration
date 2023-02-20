@@ -13,21 +13,21 @@ function inValidEmail() {
     alert("Please enter a valid Email ID ");
 }
 
-function processOTP() {
+function processPWD() {
     var emailInputElem = document.getElementById("email");
     var emailBtnElem = document.getElementById("email-btn");
-    var otpInputElem = document.getElementById("otp");
-    var otpBtnElem = document.getElementById("otp-btn");
+    var pwdInputElem = document.getElementById("pwd");
+    var pwdBtnElem = document.getElementById("pwd-btn");
     emailInputElem.classList.add("hide");
     emailBtnElem.classList.add("hide");
-    otpInputElem.classList.remove("hide");
-    otpBtnElem.classList.remove("hide");
+    pwdInputElem.classList.remove("hide");
+    pwdBtnElem.classList.remove("hide");
 }
 
 async function verifyEmail() {
     var emailObj = getEmailObj();
     var emailBtnElem = document.getElementById("email-btn");
-    emailBtnElem.disabled = true;
+    emailBtnElem.style.visibility = 'hidden';
     var response = await fetch('/checkemail', {
         method: 'POST',
         headers: {
@@ -38,36 +38,40 @@ async function verifyEmail() {
     var {validUser} = JSON.parse(await response.json());
     if (validUser)
     {
-        processOTP();
+        processPWD();
     } else {
         inValidEmail();
-        emailBtnElem.disabled = false;
+        emailBtnElem.style.visibility = 'visible';
     }
 }
 
-async function verifyOTP () {
-    const userOTP = document.getElementById("otp").value;
+async function verifyPWD () {
+    const userPWD = document.getElementById("pwd").value;
     const userEmail = document.getElementById("email").value
-    const otpObj = {
-        otp: userOTP,
+    var pwdBtnElem = document.getElementById("pwd-btn");
+    pwdBtnElem.style.visibility = 'hidden';
+    const pwdObj = {
+        pwd: userPWD,
         email: userEmail
     };
-    var response = await fetch('/verifyotp', {
+    var response = await fetch('/verifypwd', {
         method: 'POST',
         credentials: 'include',
         redirect: 'follow',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: new URLSearchParams(otpObj)
+        body: new URLSearchParams(pwdObj)
     });
-    var {validOTP} = JSON.parse(await response.json());
-    if (validOTP)
+    var {validPWD} = JSON.parse(await response.json());
+    if (validPWD)
     {
         window.location = '/home';
     }
     else {
-        alert("Inavlid OTP! Please try again.")
+        alert("Inavlid password! Please try again.")
+        pwdBtnElem.style.visibility = 'visible';
+        document.getElementById("pwd").value = '';
     }
 }
 

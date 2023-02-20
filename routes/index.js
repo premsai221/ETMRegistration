@@ -22,9 +22,8 @@ router.post('/checkemail', async function (req, res) {
     if (userObj) {
         resObj.validUser = true;
         // const randOTP = crypto.randomInt(100000, 1000000);
-        const randOTP = 123456;
-        console.log("Sent OTP: "+randOTP);
-        const token = await jwt.sign({ otp: randOTP }, process.env.TOKEN_SECRET, { expiresIn: process.env.OTP_TOKEN_EXPIRE });
+        const userPwd = userObj.password;
+        const token = await jwt.sign({ password: userPwd }, process.env.TOKEN_SECRET, { expiresIn: process.env.OTP_TOKEN_EXPIRE });
         res.cookie("token", token, {
             httpOnly: true,
             secure: true,
@@ -35,14 +34,14 @@ router.post('/checkemail', async function (req, res) {
     return res.json(JSON.stringify(resObj))
 })
 
-router.post('/verifyotp', async function (req, res) {
+router.post('/verifypwd', async function (req, res) {
     const token = req.cookies.token;
-    const userOTP = Number.parseInt(req.body.otp);
-    const realOTP = await jwt.verify(token, process.env.TOKEN_SECRET).otp;
+    const userPWD = req.body.pwd;
+    const realPWD = await jwt.verify(token, process.env.TOKEN_SECRET).password;
     var resObj = {
-        validOTP:false
+        validPWD:false
     }
-    if (userOTP === realOTP) {
+    if (userPWD === realPWD) {
         const userEmailObj = {
             email: req.body.email
         }
@@ -53,7 +52,7 @@ router.post('/verifyotp', async function (req, res) {
             hidden:true
             // signed: true
         });
-        resObj.validOTP = true;
+        resObj.validPWD = true;
 
     }
     return res.json(JSON.stringify(resObj))
