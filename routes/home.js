@@ -34,8 +34,8 @@ router.post('/bookslot', cookieJWTAuth, async function(req, res) {
     }
     const slotObject = await Slot.findOne({slotid:slotid});
     if (slotObject.freeSlots > 0){
-        slotObject.freeSlots -= 1;
-        slotObject.save();
+        var freeSlots = slotObject.freeSlots - 1;
+        await Slot.updateOne({slotid:slotObject.slotid}, {freeSlots: freeSlots});
         await User.updateOne({email:req.userObj.email}, { timeslot:slotObject.timeslot, day:slotObject.day, booked:true});
         resObj.booked = true;
         resObj.message = `Congrats! You have booked the slot ${slotObject.timeslot}`;
