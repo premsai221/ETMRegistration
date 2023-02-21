@@ -57,6 +57,7 @@ h2, p {
     max-height: 12rem;
     text-align: center;
     border-radius: 1rem;
+    padding: 0 1rem;
 }
 
 .input-radio-container:has(input[type=radio]:checked)

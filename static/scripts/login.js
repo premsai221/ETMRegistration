@@ -63,15 +63,21 @@ async function verifyPWD () {
         },
         body: new URLSearchParams(pwdObj)
     });
-    var {validPWD} = JSON.parse(await response.json());
-    if (validPWD)
+    if (!response.redirected)
     {
-        window.location = '/home';
-    }
-    else {
-        alert("Inavlid password! Please try again.")
-        pwdBtnElem.style.visibility = 'visible';
-        document.getElementById("pwd").value = '';
+        var {validPWD} = JSON.parse(await response.json());
+        if (validPWD)
+        {
+            window.location = '/home';
+        }
+        else {
+            alert("Inavlid password! Please try again.")
+            pwdBtnElem.style.visibility = 'visible';
+            document.getElementById("pwd").value = '';
+        }
+    } else {
+        alert("Attempt expired! Please try again.");
+        window.location = '/';
     }
 }
 

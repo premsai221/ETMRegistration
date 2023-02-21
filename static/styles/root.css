@@ -240,37 +240,32 @@ body {
   height: 1rem;
 }
 
-
-.register-button {
+.register-button, .logout-button {
   position: fixed;
   bottom: 7rem;
-  right: 2rem;
-  width:7rem;
   height: 2rem;
-  border:none;
   border-radius: 0.8rem;
   background-color: var(--secondary-clr-700);
   color: var(--secondary-clr-100);
-  box-shadow: 0px 1px 10px grey;
+  border:none;
+  width: 7rem;
+}
+
+.register-button {
+  right: 2rem;
 }
 
 .logout-button {
-  position: fixed;
-  bottom: 7rem;
   left: 2rem;
   text-decoration: none;
-  width: 5rem;
-  height: 2rem;
-  border:none;
-  border-radius: 0.8rem;
-  background-color: var(--secondary-clr-700);
-  color: var(--secondary-clr-100);
-  box-shadow: 0px 1px 10px grey;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .register-button:hover, .logout-button:hover {
-  box-shadow: none;
+  box-shadow: 0px 1px 10px var(--secondary-clr-700);
+  color: var(--secondary-clr-700);
+  background-color: var(--secondary-clr-100);
+  cursor: pointer;
 }

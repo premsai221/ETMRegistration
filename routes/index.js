@@ -37,22 +37,27 @@ router.post('/checkemail', async function (req, res) {
 router.post('/verifypwd', async function (req, res) {
     const token = req.cookies.token;
     const userPWD = req.body.pwd;
-    const realPWD = await jwt.verify(token, process.env.TOKEN_SECRET).password;
+    try {
+        var realPWD = await jwt.verify(token, process.env.TOKEN_SECRET).password;
+    }
+    catch (error) {
+        return res.redirect("/");
+    }
     var resObj = {
         validPWD:false
     }
     if (userPWD === realPWD) {
-        const userEmailObj = {
-            email: req.body.email
-        }
-        const token = await jwt.sign(userEmailObj, process.env.TOKEN_SECRET, { expiresIn: process.env.LOGIN_TOKEN_EXPIRE });
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: true,
-            hidden:true
-            // signed: true
-        });
-        resObj.validPWD = true;
+            const userEmailObj = {
+                email: req.body.email
+            }
+            const token = await jwt.sign(userEmailObj, process.env.TOKEN_SECRET, { expiresIn: process.env.LOGIN_TOKEN_EXPIRE });
+            res.cookie("token", token, {
+                httpOnly: true,
+                secure: true,
+                hidden:true
+                // signed: true
+            });
+            resObj.validPWD = true;
 
     }
     return res.json(JSON.stringify(resObj))
