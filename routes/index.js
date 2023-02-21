@@ -16,8 +16,6 @@ router.get('/', function (req, res) {
 router.post('/checkemail', async function (req, res) {
     const userEmail = req.body.email;
     const userObj = await User.findOne({ email: userEmail });
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     let resObj = {
         validUser: false
     };
@@ -39,8 +37,6 @@ router.post('/checkemail', async function (req, res) {
 router.post('/verifypwd', async function (req, res) {
     const token = req.cookies.token;
     const userPWD = req.body.pwd;
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     try {
         var realPWD = await jwt.verify(token, process.env.TOKEN_SECRET).password;
     }
