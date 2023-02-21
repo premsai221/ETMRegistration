@@ -66,6 +66,7 @@ form {
     height: 2.5rem;
     border-radius: 0.5rem;
     text-align: center;
+    border: none;
 }
 
 #email:focus, #pwd:focus {
